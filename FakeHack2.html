@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portal Cativo</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0F0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #terminal {
+            white-space: pre;
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        #connectBtn {
+            display: block;
+            position: absolute;
+            left: 20px;
+            background: #0F0;
+            padding: 10px 20px;
+            color: #000;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a id="connectBtn" href="javascript:void(0);" onclick="startHack();">Conectar</a>
+    <div id="terminal"></div>
+    <script>
+        var content = [
+            "Acessando dispositivo...",
+            "Dispositivo acessado ✔",
+            "Excluindo arquivos...",
+            "Arquivos excluídos ✔",
+            "Formatando dispositivo...",
+            "Dispositivo formatado ✔. \n\n",
+            "(⁠☞⁠ ͡⁠°⁠ ͜⁠ʖ⁠ ͡⁠°⁠)⁠☞",
+            "ᕙ⁠(͡⁠°⁠‿⁠ ͡⁠°⁠)⁠ᕗ",
+            /* Você pode adicionar o restante do seu arte ASCII aqui. */
+        ];
+
+        function startHack() {
+            var terminal = document.getElementById('terminal');
+            var counter = 0;
+            document.getElementById('connectBtn').style.display = 'none';
+            var intervalId = setInterval(function() {
+                terminal.textContent += content[counter++] + '\n';
+                if (counter === content.length) {
+                    clearInterval(intervalId);
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
